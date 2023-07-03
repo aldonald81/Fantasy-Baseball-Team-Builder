@@ -1,0 +1,38 @@
+
+\section{Background}
+\label{sec:background}
+
+\subsection{Data Preparation}
+\label{subsec:enum}
+In order to get total points for each MLB player, we used a formula that took in our 2021 season stats data combined with a fantasy points scoring system from fantasydata.com and spit out a points value \cite{pointsSystem}. For example, if a hitter had 21 doubles during the season, that would correlate to $2(21) = 42$ fantasy points since 1 double counts as 2 points. The formula for hitters is as follows \footnote{\url{https://baseballxgear.com/baseball-stats-abbreviations-what-do-they-mean}}
+$$4(\text{HR}) + 3(\text{3B}) + 2(\text{2B} + \text{RBI} + \text{SB}) + \text{1B} + \text{R} + \text{BB} + \text{HBP}  - \text{CS} - .5(\text{SO})$$
+The formula for pitchers is as follows:
+$$5(\text{W}) + 3(\text{S}) + \text{IP} + \text{SO} - 3(\text{BS}) -  2(\text{ER}) - \text{BB} -  \text{HBP} - .5(\text{H})$$
+
+These formulas allowed us to score players based on their statistics using a standardized fantasy baseball scoring system. 
+
+
+\subsection{Lineups}
+\label{subsec:enum}
+Our fantasy lineups consist of 1 catcher, 1 first basemen, 1 second basemen, 1 third basemen, 1 shortstop, 1 designated hitter, 3 outfielders, 5 starting pitchers, and 5 relief pitchers for a total of 19 players. In our genetic program, we model these lineups with an array that has indices corresponding to specific positions. 
+
+\subsection{Budget}
+\label{subsec:enum}
+For DraftKing, the budget was set at \$200. This means that the sum of the costs of every player in a team's lineup must be less than this budget. We felt that \$200 gave us enough room to build a very solid team, but not enough cash to make a team of all the most highly regarded and pricey MLB players. 
+
+\subsection{Genetic Programming Techniques}
+\label{subsec:enum}
+To decide what lineups are best within each generation, DraftKing uses the total fantasy points of all players on a team as the fitness function. Although this function does not take into account the cost of players, the budget constraint and genetic programming operations lead to adequate cost control so that a balanced team is built. DraftKing uses three main genetic programming strategies which are crossover, selective mutation, and reproduction. We will now provide the reader with a brief overview of these strategies including a description of regular mutation:
+\begin{itemize}
+	\item Crossover takes 2 lineups and creates 2 new lineups by crossing over the initial lineups at a somewhat random crossover point. By somewhat, we mean our crossover point chooses randomly except at positions where there are multiple players (outfield, starting pitcher, relief pitcher). In the case that there are multiple players at a position, we crossover at the first instance of that position in our lineup to avoid repetition of players due to crossover. 
+    \item Mutation takes 1 lineup and returns 1 lineup with 1 modified player. An index within the lineup is chosen at random and that player is replaced with a random player of the same position.
+	\item Selective Mutation takes 1 lineup and returns 1 lineup with 1 modified player. A mutation index within the lineup is chosen selectively based on a metric. When a team's cost is within $90\%$ of the budget this metric is the percentage of fantasy points contributed by this player to the whole team minus the percentage of the team's budget taken up by the player. When a team's cost is below $90\%$ of the budget, this metric is the player with the lowest fantasy point contribution. Once the mutation index is chosen, the player at that index is replaced with a more optimal player. In the first case mentioned above this a player with a higher difference between percent of points and percent of budget than the old player. In the second case this is a player with more overall fantasy points. 
+	\item Reproduction reproduces the top lineups of each generation in order to make sure the most fit individuals persist through generations.
+\end{itemize}
+
+In the experiments section of our paper, we will examine in depth the advantages of using selective mutation and the parameters of our genetic program as a whole that contributed to its success. 
+
+
+
+
+

@@ -1,0 +1,28 @@
+
+% The \section{} command formats and sets the title of this
+% section. We'll deal with labels later.
+\section{Introduction}
+\label{sec:intro}
+
+DraftKing.py is our final genetic program that uses an analysis of prices and fantasy points of Major League Baseball players to evolve the best possible fantasy baseball lineup given a specified budget. A budget restricts fantasy players from picking all the best MLB players with the most points, meaning you must find players with low prices but solid points to complement higher cost players. DraftKing takes into account both point contribution and price of players when determining fitness of teams and how to evolve them. 
+
+We used two datasets when testing DraftKing. The first data set from Sporting News holds 2021 MLB player pre-season auction prices \cite{optionPrice}. This data is used when calculating the cost of a team. The second data set from Baseball Savant contains 2021 season statistics for both hitters and pitchers used in calculating a player's fantasy points \cite{stats}. \\
+
+This paper is organized as follows. Our background section discusses the formula used to calculate fantasy points and some information about how DraftKing evolves generations of individuals, specifically through crossover and mutation. The experiments section describes the process of developing, fine tuning, and testing DraftKing in order to build the best lineups in an efficient manner. We will include a comparison of two slightly different variations. In the results section, we analyze the output of DraftKing at peak performance. We will look at the quality of the final lineups produced and analyze the frequency that certain players showed up. Our conclusion summarizes our findings.
+
+% Citations: As you can see above, you create a citation by using the
+% \cite{} command. Inside the braces, you provide a "key" that is
+% uniue to the paper/book/resource you are citing. How do you
+% associate a key with a specific paper? You do so in a separate bib
+% file --- for this document, the bib file is called
+% project1.bib. Open that file to continue reading...
+
+% Note that merely hitting the "return" key will not start a new line
+% in LaTeX. To break a line, you need to end it with \\. To begin a 
+% new paragraph, end a line with \\, leave a blank
+% line, and then start the next line (like in this example).
+%Overall, the aim in this section is context-setting: what is the
+% big-picture surrounding the problem you are tackling here?
+
+
+

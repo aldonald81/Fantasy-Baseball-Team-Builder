@@ -1,0 +1,98 @@
+
+\section{Results}
+\label{sec:results}
+
+We ran our final program, DraftKing, with selective mutation, a generation size of 50, 500 generations, a budget of \$200, and crossover, mutation, and reproduction ratios of $0.8$, $0.15$, and $0.05$. We conducted $20$ trials with these parameters, which resulted in the following highest-scoring lineup found here in Figure 2.
+
+\begin{figure}[htb]
+  \centering 
+  \begin{tabular}{|c|c|c|c|} 
+    \hline \hline 
+    Position & Player & Price & Points \\ 
+    \hline 
+    Catcher & Salvador Perez & $14$ & $625$ \\
+    First Base & Matt Olson & $15$ & $675.5$ \\
+    Second Base & Max Muncy & $10$ & $582$ \\
+    Third Base & Vladimir Guerrero Jr. & $20$ & $752$ \\
+    Shortstop & Jorge Polanco & $3$ & $596$ \\
+    Outfield & Bryan Reynolds & $3$ & $596.5$ \\
+    Outfield & Mitch Haniger & $4$ & $591.5$ \\
+    Outfield & Austin Riley & $5$ & $597$ \\
+    DH & Marcus Semien & $12$ & $697$ \\
+    Starter & Robbie Ray & $2$ & $632.75$ \\
+    Starter & Walker Buehler & $27$ & $631.75$ \\
+    Starter & Max Scherzer & $28$ & $716.5$ \\
+    Starter & Zack Wheeler & $9$ & $649$ \\
+    Starter & Julio Urias & $4$ & $594.25$ \\
+    Reliever & Corbin Burnes & $8$ & $661.25$ \\
+    Reliever & Freddy Peralta & $2$ & $475.25$ \\
+    Reliever & Liam Hendricks & $14$ & $583.75$ \\
+    Reliever & Raisel Iglesias & $9$ & $502.5$ \\
+    Reliever & Kevin Gausman & $6$ & $600$ \\
+    \hline 
+    Total & & $195$ & $11759.5$ \\
+    \hline \hline
+  \end{tabular}
+
+  \caption{Highest-scoring lineup found in 20 trials.}
+  \label{tab:example}
+
+\end{figure}
+
+This lineup had the best score that we found in our $20$ trials. With a price of \$195, we cannot say for certain the lineup could not do better, however, it definitely limits how much better this lineup could become. 
+\newline\indent The maximum price and points for all available hitters and pitchers respectively were $\$60$, $\$48$, $752$, and $716.5$. The average price and average points totaled by all hitters available to the program were $\$11.85$ and $417.62$ respectively. The hitters in this lineup had averages of $\$9.56$ and $634.72$. All pitchers carried averages of $\$7.64$ and $567.82$, while the pitchers in this lineup cost $\$10.9$ and produced $604.7$. From this data, it seems the hitters were selected more efficiently than the pitchers, led by Vladimir Guerrero who contributed more points than any hitter available in the simulation. The pitchers had the two highest-priced players on the team in Max Scherzer and Walker Buehler. However, Max Scherzer produced more points than any pitcher in the entire program, and Walker Buehler was nearly the third highest-producing pitcher on the team. So while a lot of money was spent on these two, the team may have needed their points. 
+\newline\indent This is only one lineup that was created out of the $20$ trials that we ran with the program. Other lineups contained some of the same players and some different ones. Within the $20$ trials, we found the following pitchers and hitters $15$ or more times.
+
+
+\begin{figure}[htb]
+  \centering 
+  \begin{tabular}{|c|c|c|c|} 
+    \hline \hline 
+    Player & Price & Points & Frequency \\ 
+    \hline 
+    Julio Urias & $4$ & $594.25$ & $20$ \\
+    Kevin Gausman & $6$ & $600$ & 
+    $20$ \\
+    Corbin Burnes & $8$ & $661.25$ & $20$ \\
+    Liam Hendricks & $14$ & $583.75$ & $19$ \\
+    Robbie Ray & $2$ & $632.75$ & $19$ \\
+    Raisel Iglesias & $9$ & $502.5$ & $18$ \\
+    Max Scherzer & $28$ & $716.5$ & $18$ \\
+    Zack Wheeler & $9$ & $649$ & $18$ \\
+    Freddy Peralta & $2$ & $475.25$ & $15$ \\
+    \hline 
+    Average & & $9.11$ & $601.69$ \\
+    \hline \hline
+  \end{tabular}
+
+  \caption{Most occurring pitchers.}
+  \label{tab:example}
+
+\end{figure}
+
+\begin{figure}[htb]
+  \centering 
+  \begin{tabular}{|c|c|c|c|} 
+    \hline \hline 
+    Player & Price & Points & Frequency \\ 
+    \hline 
+    Salvador Perez & $14$ & $625$ & $20$ \\
+    Bryan Reynolds & $3$ & $596.5$ & 
+    $20$ \\
+    Ausitn Riley & $5$ & $597$ & $20$ \\
+    Vladimir Guerrero Jr. & $19$ & $752$ & $17$ \\
+    Marcus Semien & $12$ & $697$ & $17$ \\
+    \hline 
+    Average & & $10.8$ & $653.5$ \\
+    \hline \hline
+  \end{tabular}
+
+  \caption{Most occurring hitters.}
+  \label{tab:example}
+
+\end{figure}
+
+It is obvious why some players showed up so many times. Robbie Ray only costs $\$2$, but he produced $632.75$ points. In 2021, he won the American League Cy Young Award for best pitcher in the American League. Vladimir Guerrero Jr. had an enormous $752$ points. While $\$19$ is a slightly higher price, he was the highest scoring hitter available. Other players can confuse people on why they may have been chosen so often. One player might be Raisel Iglesias. With a price equal to that of Zack Wheeler who produced $649$ points, Raisel Iglesias carried less points than anyone else on this list other than the extremely low-priced Freddy Peralta. But while it seems like Iglesias might not have as much value, no player that wasn't already on the best lineup could have replaced Iglesias and added more points while staying under the budget. In fact, the only reliever not on the roster who had more points was Josh Hader, who had $520.5$ points, but a price of $\$15$, good for the most expensive relief pitcher available. Hader found his way into $11$ out of the $20$ lineups. Concluding the results, this lineup produced was very good, and while it could likely be slightly improved, the genetic program seems to have done a great job finding an optimal lineup out of the players available within a budget constraint.
+
+
+
